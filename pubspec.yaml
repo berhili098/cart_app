@@ -18,21 +18,21 @@ dependencies:
   json_annotation: ^4.8.1
   flutter_riverpod: ^2.4.6
   hooks_riverpod: ^2.4.6
-  gen_i18n: ^1.0.3 
+  # gen_i18n: ^1.0.3 
   flutter_gen_runner: ^5.3.2
-  dartz: ^0.10.1
+  # dartz: ^0.10.1
   cached_network_image: ^3.3.0
   flutter_localizations:
     sdk: flutter
   flex_color_scheme: ^7.3.1
   google_fonts: ^6.1.0
   flash: ^3.0.5+2
-  persistent_bottom_nav_bar: ^5.0.2
+  # persistent_bottom_nav_bar: ^5.0.2
   salomon_bottom_bar: ^3.3.2
   flutter_svg: ^2.0.9
-  lottie: ^2.7.0
-  flutter_point_tab_bar: ^0.2.0
-  sliding_clipped_nav_bar: ^3.1.0+4
+  # lottie: ^2.7.0
+  # flutter_point_tab_bar: ^0.2.0
+  # sliding_clipped_nav_bar: ^3.1.0+4
   dot_navigation_bar: ^1.0.2
   freezed: ^2.4.5
   flutter_hooks: ^0.20.3
@@ -47,7 +47,6 @@ flutter_gen:
     enabled: true 
   integrations:
     flutter_svg: true
-    lottie: true  
 
 dev_dependencies:
   flutter_test:
