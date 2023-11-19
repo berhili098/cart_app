@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Checkout {
   Product get product => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
+  String get promosCode => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CheckoutCopyWith<Checkout> get copyWith =>
@@ -29,7 +30,7 @@ abstract class $CheckoutCopyWith<$Res> {
   factory $CheckoutCopyWith(Checkout value, $Res Function(Checkout) then) =
       _$CheckoutCopyWithImpl<$Res, Checkout>;
   @useResult
-  $Res call({Product product, int quantity});
+  $Res call({Product product, int quantity, String promosCode});
 
   $ProductCopyWith<$Res> get product;
 }
@@ -49,6 +50,7 @@ class _$CheckoutCopyWithImpl<$Res, $Val extends Checkout>
   $Res call({
     Object? product = null,
     Object? quantity = null,
+    Object? promosCode = null,
   }) {
     return _then(_value.copyWith(
       product: null == product
@@ -59,6 +61,10 @@ class _$CheckoutCopyWithImpl<$Res, $Val extends Checkout>
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int,
+      promosCode: null == promosCode
+          ? _value.promosCode
+          : promosCode // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 
@@ -79,7 +85,7 @@ abstract class _$$CheckoutImplCopyWith<$Res>
       __$$CheckoutImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Product product, int quantity});
+  $Res call({Product product, int quantity, String promosCode});
 
   @override
   $ProductCopyWith<$Res> get product;
@@ -98,6 +104,7 @@ class __$$CheckoutImplCopyWithImpl<$Res>
   $Res call({
     Object? product = null,
     Object? quantity = null,
+    Object? promosCode = null,
   }) {
     return _then(_$CheckoutImpl(
       product: null == product
@@ -108,6 +115,10 @@ class __$$CheckoutImplCopyWithImpl<$Res>
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int,
+      promosCode: null == promosCode
+          ? _value.promosCode
+          : promosCode // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -115,17 +126,21 @@ class __$$CheckoutImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CheckoutImpl extends _Checkout {
-  const _$CheckoutImpl({required this.product, required this.quantity})
+  const _$CheckoutImpl(
+      {required this.product, required this.quantity, this.promosCode = ''})
       : super._();
 
   @override
   final Product product;
   @override
   final int quantity;
+  @override
+  @JsonKey()
+  final String promosCode;
 
   @override
   String toString() {
-    return 'Checkout(product: $product, quantity: $quantity)';
+    return 'Checkout(product: $product, quantity: $quantity, promosCode: $promosCode)';
   }
 
   @override
@@ -135,11 +150,13 @@ class _$CheckoutImpl extends _Checkout {
             other is _$CheckoutImpl &&
             (identical(other.product, product) || other.product == product) &&
             (identical(other.quantity, quantity) ||
-                other.quantity == quantity));
+                other.quantity == quantity) &&
+            (identical(other.promosCode, promosCode) ||
+                other.promosCode == promosCode));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, product, quantity);
+  int get hashCode => Object.hash(runtimeType, product, quantity, promosCode);
 
   @JsonKey(ignore: true)
   @override
@@ -151,13 +168,16 @@ class _$CheckoutImpl extends _Checkout {
 abstract class _Checkout extends Checkout {
   const factory _Checkout(
       {required final Product product,
-      required final int quantity}) = _$CheckoutImpl;
+      required final int quantity,
+      final String promosCode}) = _$CheckoutImpl;
   const _Checkout._() : super._();
 
   @override
   Product get product;
   @override
   int get quantity;
+  @override
+  String get promosCode;
   @override
   @JsonKey(ignore: true)
   _$$CheckoutImplCopyWith<_$CheckoutImpl> get copyWith =>

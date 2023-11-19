@@ -92,6 +92,16 @@ class $AssetsIconsGen {
       ];
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/logo.jpg
+  AssetGenImage get logo => const AssetGenImage('assets/images/logo.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [logo];
+}
+
 class $AssetsJsonGen {
   const $AssetsJsonGen();
 
@@ -109,6 +119,7 @@ class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsJsonGen json = $AssetsJsonGen();
 }
 

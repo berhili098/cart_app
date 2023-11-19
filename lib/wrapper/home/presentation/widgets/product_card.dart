@@ -86,7 +86,7 @@ class ProductItemWidget extends HookConsumerWidget {
                       if (!basketList
                           .any((element) => element.product == product)) {
                         ref.read(basketListProvider.notifier).update((state) {
-                          state.add(Checkout(product: product, quantity: 1));
+                          state.add(Checkout(product: product, quantity: 1 ));
                           return state;
                         });
                       } else {

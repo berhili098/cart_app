@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -16,13 +17,15 @@ import 'package:wiggli_test/theme/shared/light_theme.dart';
 import 'package:wiggli_test/wrapper/presentation/widgets/search_field.dart';
 
 @RoutePage()
-class ProductPage extends ConsumerWidget {
+class ProductPage extends HookConsumerWidget {
   final Product product;
   const ProductPage({required this.product, super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final basketList = ref.watch(basketListProvider);
+    final promosCodeController = useTextEditingController(text: '');
+
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70.h),
@@ -238,16 +241,19 @@ class ProductPage extends ConsumerWidget {
                 10.verticalSpace,
                 TextFieldSearchWidget(
                   height: 80.h,
+                  controller: promosCodeController,
                   hint: context.l10n.enterPromosCode,
                   suffixIcon: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        context.l10n.applyCode,
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w600,
+                      GestureDetector(
+                        child: Text(
+                          context.l10n.applyCode,
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary,
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ],
@@ -265,7 +271,10 @@ class ProductPage extends ConsumerWidget {
                       if (!basketList
                           .any((element) => element.product == product)) {
                         ref.read(basketListProvider.notifier).update((state) {
-                          state.add(Checkout(product: product, quantity: 1));
+                          state.add(Checkout(
+                              promosCode: promosCodeController.text,
+                              product: product,
+                              quantity: 1));
                           return state;
                         });
                       }

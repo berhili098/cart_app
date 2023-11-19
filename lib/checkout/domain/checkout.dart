@@ -10,5 +10,6 @@ class Checkout with _$Checkout {
   const factory Checkout({
     required Product product,
     required int quantity,
+    @Default('') String promosCode,
   }) = _Checkout;
 }

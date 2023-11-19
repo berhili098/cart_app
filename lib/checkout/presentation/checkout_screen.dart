@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:wiggli_test/checkout/presentation/widgets/cart_widget.dart';
 import 'package:wiggli_test/checkout/shared/providers.dart';
 import 'package:wiggli_test/core/extensions/local.dart';
@@ -12,7 +13,7 @@ import 'package:wiggli_test/theme/shared/light_theme.dart';
 import 'package:wiggli_test/wrapper/presentation/widgets/search_field.dart';
 
 @RoutePage()
-class CheckoutPage extends ConsumerWidget {
+class CheckoutPage extends HookConsumerWidget {
   const CheckoutPage({super.key});
 
   @override
@@ -25,7 +26,13 @@ class CheckoutPage extends ConsumerWidget {
     final subtotalWithDeliveryAndDiscout = subtotal + 23;
     final total = subtotalWithDeliveryAndDiscout -
         (subtotalWithDeliveryAndDiscout * 0.15);
-
+    String promosCode = basketList.isNotEmpty
+        ? basketList
+            .map((e) => e.promosCode)
+            .toList()
+            .firstWhere((element) => element.isNotEmpty, orElse: () => "")
+        : "";
+    final promosCodeController = useTextEditingController(text: promosCode);
     return Scaffold(
         bottomSheet: basketList.isEmpty
             ? const SizedBox.shrink()
@@ -110,6 +117,7 @@ class CheckoutPage extends ConsumerWidget {
                       ),
                       TextFieldSearchWidget(
                         hint: context.l10n.enterVoucherCode,
+                        controller: promosCodeController,
                         suffixIcon: Padding(
                           padding: EdgeInsets.all(5.w),
                           child: SvgPicture.asset(
@@ -118,7 +126,7 @@ class CheckoutPage extends ConsumerWidget {
                                 Colors.green, BlendMode.srcIn),
                           ),
                         ),
-                        readOnly: false,
+                        readOnly: true,
                       ),
                       const Divider(
                         color: Color.fromRGBO(100, 116, 139, 0.2),
