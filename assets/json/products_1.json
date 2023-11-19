@@ -1,0 +1,37 @@
+[
+  {
+    "name": "iPhone 13",
+    "company": "Apple",
+    "price": 1099,
+    "description": "The latest iPhone with a stunning Super Retina XDR display.",
+    "picture": "https://images.unsplash.com/photo-1580566231970-2c91d3f49637?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+  },
+  {
+    "name": "Galaxy S22",
+    "company": "Samsung",
+    "price": 999,
+    "description": "Experience the ultimate in smartphone technology with the Galaxy S21.",
+    "picture": "https://images.samsung.com/is/image/samsung/p6pim/n_africa/2202/gallery/n-africa-galaxy-s22-plus-s906-412939-sm-s906ezggmwd-530964132"
+  },
+  {
+    "name": "Pixel 7 pro",
+    "company": "Google",
+    "price": 799,
+    "description": "The Pixel 7 is the perfect phone for those who value simplicity and ease of use.",
+    "picture": "https://lh3.googleusercontent.com/2QKYQg6WuyEbx0Kd83N8-_lhs0Vk-GYQWCqsQjtuGejiimGFRTp-FEc9tDfMer_xoj7FaOMuAE7pg0Uj-rpWS9A2RpZiCQpZSXi3=rw-e365-w1050"
+  },
+  {
+    "name": "OnePlus 10",
+    "company": "OnePlus",
+    "price": 799,
+    "description": "Get flagship-level performance at an affordable price with the OnePlus 10.",
+    "picture": "https://fdn2.mobgsm.com/vv/pics/oneplus/oneplus-10-pro-2.jpg"
+  },
+  {
+    "name": "Mi 12",
+    "company": "Xiaomi",
+    "price": 749,
+    "description": "The Mi 12 is a high-performance smartphone with a sleek design.",
+    "picture": "https://images.frandroid.com/wp-content/uploads/2021/12/xiaomi-12-france-frandroid-2022.png"
+  }
+]

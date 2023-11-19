@@ -1,0 +1,37 @@
+[
+  {
+    "name": "PS5 Wireless Remote",
+    "company": "Sony",
+    "price": 59.99,
+    "description": "Take control of your gaming experience with the PS5 wireless remote.",
+    "picture": "https://media.direct.playstation.com/is/image/sierialto/dualsense-edge-ps5-controller-front"
+  },
+  {
+    "name": "AirPods Pro",
+    "company": "Apple",
+    "price": 249,
+    "description": "Experience the ultimate in wireless earbuds with AirPods Pro.",
+    "picture": "https://www.zdnet.com/a/img/resize/713757105549e1c4f3edc3071596cfe5d6b8bf68/2022/09/22/92cbda52-2e51-4e62-99b2-eca84b7e6d92/airpods-pro-2022.jpg?auto=webp&fit=crop&height=900&width=1200"
+  },
+  {
+    "name": "Powerbeats Pro",
+    "company": "Beats",
+    "price": 199.95,
+    "description": "Get the most out of your workouts with the Powerbeats Pro wireless earbuds.",
+    "picture": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MY582?wid=5645&hei=3816&fmt=jpeg&qlt=95&.v=1604515400000"
+  },
+  {
+    "name": "google nest hub max",
+    "company": "Google",
+    "price": 99.99,
+    "description": "Get hands-free help around the house with the Google Nest Hub.",
+    "picture": "https://www.androidauthority.com/wp-content/uploads/2019/09/Google-Home-Hub-Max-review-13.jpg"
+  },
+  {
+    "name": "Samsung Galaxy Watch 4",
+    "company": "Samsung",
+    "price": 249.99,
+    "description": "Stay connected on the go with the Samsung Galaxy Watch.",
+    "picture": "https://tabtel.ma/6933-large_default/montre-galaxy-watch-4-bluetooth-sport-sm-r860nzdamea-40mm.jpg"
+  }
+]
